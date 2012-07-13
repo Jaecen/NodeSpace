@@ -1,0 +1,39 @@
+- plaintext
+c encrypted w/ client's public key
+s encrypted w/ server's public key
+m encrypted w/ master key
+o encrypted w/ session derived key
+
+== Connection ==
+Client sends 
+	- CONNECT REQ
+	- client's public key 
+	- random nonce
+	- signature
+[Optional server authentication]
+[Server associates public key and session master key with session ID]
+Server sends
+	- CONNECT REP
+	- server's public key
+	s session master key
+	- session ID
+	- nonce + 1
+	- signature
+[Client is now connected]
+
+== Message Passing ==
+Client sends
+	- MESSAGE REQ
+	- session ID
+	o payload
+	- nonce + 1
+	- signature
+[Server retrieves public key and master key by session ID]
+[Server verifies payload]
+[Server acts on payload]
+Server sends
+	- MESSAGE REP
+	- session ID
+	o result
+	- nonce + 1
+	- signature
