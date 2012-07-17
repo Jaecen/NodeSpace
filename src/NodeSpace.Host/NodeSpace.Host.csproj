@@ -74,6 +74,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ByteArrayComparer.cs" />
+    <Compile Include="HostCommand.cs" />
+    <Compile Include="HostState.cs" />
+    <Compile Include="IConnectionContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
